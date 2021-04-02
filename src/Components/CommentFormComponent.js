@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class Form extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             comment: ""
@@ -10,14 +10,14 @@ export default class Form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-     handleChange(event){
-         const {name,value}=event.target
-         this.setState({
-             [name]:value
-         })
-     }
+    handleChange(event) {
+        const { name, value } = event.target
+        this.setState({
+            [name]: value
+        })
+    }
     handleSubmit(event) {
-        this.props.addComment(this.state.comment, this.props.postId , this.props.userId , Date.now());
+        this.props.addComment(this.state.comment, this.props.postId, this.props.userId, Date.now());
         this.setState({
             comment: ""
         })
@@ -26,8 +26,15 @@ export default class Form extends Component {
     render() {
         return (
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    <input type="text" value = {this.state.comment} name="comment" placeholder="say something .." onChange={this.handleChange}></input>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        value={this.state.comment}
+                        name="comment"
+                        placeholder="say something .."
+                        onChange={this.handleChange}
+                        autoComplete="off">
+                    </input>
                     <button type="submit">Post</button>
                 </form>
             </div>
