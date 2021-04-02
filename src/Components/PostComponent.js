@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { addComment , deleteComment } from '../Redux/ActionCreators';
 import Form from './CommentFormComponent';
 import Comment from './CommentListComponent'
+import { FiHeart } from 'react-icons/fi'
+import { IoChatbubbleOutline } from 'react-icons/io5'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 
 const mapStateToProps = state => {
     return{
@@ -11,7 +14,6 @@ const mapStateToProps = state => {
         comments: state.comments
     }
 };
-
 
 const mapDispatchToProps = dispatch => ({
     addComment: (comment , postId , userId , timeAgo) => dispatch(addComment(comment , postId , userId , timeAgo)),
@@ -22,8 +24,16 @@ class Post extends Component {
     constructor(props){
         super(props);
     }
+
+    componentDidUpdate(){
+        var objDiv = document.getElementsByClassName("comment-list")[0];
+        console.log(objDiv)
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
     render() {
         return (
+            
             <div>
                 {this.props.posts.map((post)=>{
                     var user =  this.props.users.filter((u)=>{
@@ -43,6 +53,10 @@ class Post extends Component {
                                         <p><strong>{user[0].name}</strong> - {post.description}<br/><br/><i>{post.time}</i></p>
                                     </div>
 
+                                    <div className="plus-icon-div">
+                                        <AiOutlinePlusCircle className="icon-plus"/>
+                                    </div>
+
                                     <div className="comment-section">
 
                                         <div className="comment-list">
@@ -50,7 +64,12 @@ class Post extends Component {
                                         </div>
 
                                         <div className="post-likes">
-
+                                            <div className="post-likes-inner">
+                                            <FiHeart className="icon-heart"/> &nbsp;  <IoChatbubbleOutline className="icon-comment" />
+                                            <h4>Likes | {this.props.comments.comments.length} Comments</h4>
+                                            <p>8h ago</p>
+                                            </div>
+                            
                                         </div>
 
                                         <div className="post-comment">
