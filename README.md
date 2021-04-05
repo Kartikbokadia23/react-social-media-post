@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# react-redux-social-meadia-post
+
+## functionality
+
+<ul>
+  <li>Add Comment</li>
+  <li>Delete Comment</li>
+  <li>Like Post</li>
+  <li>Instant updates on number of likes and coments</li>
+</ul>
+
+## Technology Used
+<ul>
+  <li>HTML/CSS</li>
+  <li>React Js</li>
+  <li>Redux</li>
+  <li>Flex Box</li>
+</ul>
+
+<img src = "public/Screenshot 2021-04-05 at 12.41.11 PM.png">
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
