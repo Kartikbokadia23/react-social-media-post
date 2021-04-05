@@ -13,6 +13,7 @@
     "react-redux": "^7.2.3",
     "react-scripts": "4.0.3",
     "react-time-ago": "^6.2.2",
+    "react-useanimations": "^2.0.6",
     "redux": "^4.0.5",
     "web-vitals": "^1.0.1"
   },
