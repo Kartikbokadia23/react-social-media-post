@@ -1,5 +1,9 @@
 # react-redux-social-meadia-post
 
+## link to same project made with Webpack
+
+https://github.com/Kartikbokadia23/simple-react-to-webpack-social-card.git
+
 ## functionality
 
 <ul>
